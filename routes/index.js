@@ -1,5 +1,8 @@
+
 import express from "express";
+
 import { homePage } from "../controllers/homeController.js";
+
 import {
   loginPage,
   registerPage,
@@ -10,7 +13,9 @@ import {
   logoutUser,
 } from "../controllers/authController.js";
 
-import { attendancerecordcontroller } from "../controllers/attendancerecordcontroller.js";
+import {
+  attendancerecordcontroller,
+} from "../controllers/attendancerecordcontroller.js";
 
 const router = express.Router();
 
@@ -44,13 +49,13 @@ router.get(
   attendancerecordcontroller.show
 );
 
-router.put(
+router.post(
   "/attendanceRecords/:id",
   attendancerecordcontroller.update
 );
 
-router.delete(
-  "/attendanceRecords/:id",
+router.post(
+  "/attendanceRecords/:id/delete",
   attendancerecordcontroller.delete
 );
 

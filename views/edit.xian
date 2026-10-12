@@ -1,0 +1,51 @@
+
+{{> head}}
+
+<body class="bg-gray-50">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold mb-6">Edit Attendance Record</h1>
+
+    <form method="POST" action="/attendanceRecords/{{attendanceRecord.id}}">
+      <table class="w-full border-collapse border border-gray-300">
+        <tr>
+          <td class="border p-3">Employee Name</td>
+          <td class="border p-3">
+            <input class="border p-2 w-full" type="text" name="EmployeeName" value="{{attendanceRecord.EmployeeName}}" required>
+          </td>
+        </tr>
+        <tr>
+          <td class="border p-3">Date</td>
+          <td class="border p-3">
+            <input class="border p-2 w-full" type="date" name="date" value="{{attendanceRecord.date}}" required>
+          </td>
+        </tr>
+        <tr>
+          <td class="border p-3">Time In</td>
+          <td class="border p-3">
+            <input class="border p-2 w-full" type="time" name="timeIn" value="{{attendanceRecord.timeIn}}" required>
+          </td>
+        </tr>
+        <tr>
+          <td class="border p-3">Time Out</td>
+          <td class="border p-3">
+            <input class="border p-2 w-full" type="time" name="timeOut" value="{{attendanceRecord.timeOut}}" required>
+          </td>
+        </tr>
+        <tr>
+          <td class="border p-3">Status</td>
+          <td class="border p-3">
+            <input class="border p-2 w-full" type="text" name="status" value="{{attendanceRecord.status}}" required>
+          </td>
+        </tr>
+        <tr>
+          <td class="border p-3" colspan="2">
+            <button class="bg-blue-600 text-white px-4 py-2" type="submit">Update</button>
+            <a class="ml-2 text-blue-600 underline" href="/attendanceRecords">Cancel</a>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</body>
+
+{{> footer}}
